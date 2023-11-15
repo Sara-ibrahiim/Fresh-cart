@@ -1,0 +1,23 @@
+ <section class="mt-5">
+    <div class="container mt-5">
+        <div class="row py-5">
+            <div class="w-50 mx-auto">
+                <form [formGroup]="shippingAdress" (ngSubmit)="checkout(shippingAdress)">
+                    <label for="details">Details</label>
+                    <input type="text" formControlName="details" class="form-control mb-2" >
+                    <label for="phone">Phone</label>
+                    <input type="tel" formControlName="phone" class="form-control mb-2" >
+                    <label for="city">City</label>
+                    <input type="text" formControlName="city" class="form-control mb-3" >
+
+                    <button class="btn bg-main  text-white " type="submit">Pay Now</button>
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+    </div>
+ </section>

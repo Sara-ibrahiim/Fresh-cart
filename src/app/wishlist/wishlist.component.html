@@ -1,0 +1,38 @@
+<section class="pt-4">
+    
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let item of products" >
+                <div class="product p-2 overflow-hidden">
+                    <button class="btn"><i class="fa-heart fa-solid"></i></button> 
+                    <button (click)="removeItem(item._id)" class="btn">
+                        <span> <i class="fa-solid fa-trash-can text-danger"></i></span>
+
+                    </button>
+                 
+                    <a [routerLink]="['/product-detailes',item._id]"> 
+                        <img [src]="item.imageCover" alt="" class="w-100">
+                        <span class="text-main">{{item.category.name}}</span>
+                        <h2 class="h6">{{item.title.split(' ').slice(0,2).join(' ')}}</h2>
+                        <div class="d-flex justify-content-between">
+                            <span>{{item.price}}EGP</span>
+                            <span>{{item.ratingsAverage}} 
+                                <i class="fa-solid fa-star rating-color">   </i>
+                            </span>
+    
+                        </div>
+                        <button class="btn bg-main text-white w-100">+Add</button>
+                    </a>
+                
+                </div>
+
+            </div>
+           
+            
+
+        </div>
+
+        
+        
+    </div>
+</section>

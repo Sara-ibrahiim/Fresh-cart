@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+        <div class="row py-5" *ngIf="produectData">
+            <div class="col-md-4">
+                <div>
+                    <owl-carousel-o [options]="customOptions">
+
+                        <ng-container *ngFor="let img of produectData.images">
+                          <ng-template carouselSlide>
+                            <img [src]="img">
+                          </ng-template>
+                        </ng-container>
+                    
+                      </owl-carousel-o>
+                    <!-- <img [src]="produectData.imageCover" alt="" class="w-100"> -->
+                </div>
+
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+
+                <div class="w-100">
+                <h2 class="h4">{{produectData?.title}}</h2>
+                <p>{{produectData?.description}}</p>
+
+                <div class="d-flex justify-content-between">
+                    <span>{{produectData?.price}}EGP</span>
+                    <span>{{produectData?.ratingsAverage}} 
+                        <i class="fa-solid fa-star rating-color">   </i>
+                    </span>
+
+                </div>
+                <button class="btn bg-main text-white w-100 mt-2">+Add</button>
+
+
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>

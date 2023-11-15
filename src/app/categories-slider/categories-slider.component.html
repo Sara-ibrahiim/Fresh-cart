@@ -1,0 +1,21 @@
+<section class="py-3">
+    <div class="container">
+        <div class="row">
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-container *ngFor="let slide of categoriesData">
+                  <ng-template carouselSlide>
+                    <img height="200" [src]="slide.image" [alt]="slide.name">
+                    <h4 class="h6 text-center py-2">{{slide.name}}</h4>
+                  </ng-template>
+                </ng-container>
+            
+              </owl-carousel-o>
+           
+    
+ 
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,35 @@
+<section class="pt-4">
+    <div class="container bg-main-light p-4 my-3">
+        <h2>Orders</h2>
+        
+        <div  *ngFor="let order of cartData; let i = index ">
+            <h4>order {{i+1}}</h4>
+            <h6 class="text-danger">Total Price : {{order?.totalOrderPrice}} EGP</h6>
+        
+            <div class="row border-bottom mb-2" *ngFor="let item of order?.cartItems; let i = index ">
+                
+                <div class="col-md-1">
+                    <img [src]="item?.product.imageCover" alt="" class="w-100 my-2">
+    
+                </div>
+                <div class="col-md-11 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6>{{item?.product.title}}</h6>
+                        <h6 class="text-main">Price : {{item?.price}} EGP </h6>
+                      
+                    </div>
+                    <div>
+                       
+                        <span class="px-2"> {{item?.count}} </span> </div>
+                  
+    
+                </div>
+               
+            </div>
+         
+
+        </div>
+
+
+    </div>
+</section>

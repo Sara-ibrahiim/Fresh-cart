@@ -1,0 +1,46 @@
+<app-mini-slider></app-mini-slider>
+<app-categories-slider></app-categories-slider>
+<section>
+    <div class="container py-5">
+        <div class="py-3 ">
+            <input  [(ngModel)]="x" type="text" class=" form-control w-75 m-auto" placeholder="search items...">
+        </div>
+  
+        <div class="row">
+            <div class="col-md-2" *ngFor="let item of products|search:x " >
+                <div class="product p-2 overflow-hidden">
+                    <button class="btn" (click)="addToWishList(item._id)">
+                        
+                      
+                         <!-- <i class="fa-heart" [class]="isInWishList? 'fa-solid': 'fa-regular'"></i>  -->
+                         <i class="fa-heart fa-regular"  (click)="toggle($event)"></i> 
+                    </button> 
+
+                         
+                    <a [routerLink]="['/product-detailes',item._id]"> 
+                        <img [src]="item.imageCover" alt="" class="w-100">
+                        <span class="text-main fw-bold font-sm">{{item.category.name}}</span>
+                        <h2 class="h6 font-sm fw-bold">{{item.title|seeMore:2}}</h2>
+                        <div class="d-flex justify-content-between">
+                            <span>{{item.price}}EGP</span>
+                            <span>{{item.ratingsAverage}} 
+                                <i class="fa-solid fa-star rating-color">   </i>
+                            </span>
+    
+                        </div>
+                       
+                    </a>
+                    <button (click)="addToCart(item. _id)" class="btn bg-main text-white w-100">+Add</button>
+                
+                </div>
+
+            </div>
+           
+            
+
+        </div>
+
+        
+        
+    </div>
+</section>

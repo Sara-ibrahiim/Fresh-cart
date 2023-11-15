@@ -1,0 +1,36 @@
+<section class="mt-5">
+    <div class="container bg-main-light p-4  ">
+        <h5>Shipping Cart</h5>
+        <h6 class="text-danger">Total Price : {{cartDetiales?.totalCartPrice}} EGP</h6>
+        
+        <div class="row border-bottom my-2" *ngFor="let item of cartDetiales?.products">
+            <div class="col-md-1">
+                <img [src]="item?.product.imageCover" alt="" class="w-100 my-2">
+
+            </div>
+            <div class="col-md-11 d-flex justify-content-between align-items-center">
+                <div>
+                    <h6>{{item?.product.title}}</h6>
+                    <h6 class="text-main">Price : {{item?.price}} EGP </h6>
+                    <button  (click)="removeCartItem(item?.product?._id)" class="btn p-0 m-0">
+                        <i class="fa-regular fa-trash-can text-danger"></i> Remove
+                    </button>
+                </div>
+                <div>
+                    <button (click)="updateCartItem(item?.product?._id,item?.count+1)" class="btn btn-outline-info">+</button>
+                    <span class="px-2"> {{item?.count}} </span>
+                    <button  (click)="updateCartItem(item?.product?._id,item?.count-1)" class="btn btn-outline-info">-</button>
+    
+                </div>
+               
+
+            </div>
+           
+        </div>
+        <button class="btn bg-main text-white my-3 ">
+            <a [routerLink]="['/checkout', cartDetiales._id]" class=" text-white">Online Payment</a>
+            
+         </button>
+
+    </div>
+</section>

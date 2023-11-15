@@ -1,0 +1,96 @@
+
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top mb">
+      <div class="container ">
+        <a class="navbar-brand" > <img src="../../assets/images/freshcart-logo.svg" alt="" routerLink="/home" class="w-100"></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul *ngIf="isLogin" class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="home" routerLinkActive="/home" > Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="cart" routerLinkActive="/cart" > cart</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="products" routerLinkActive="/products" > products</a>
+                </li> -->
+                
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="brands" routerLinkActive="/brands" > brands</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="categories" routerLinkActive="/categories"> categories</a>
+                </li>
+                
+
+                
+
+                
+                
+                
+
+
+            </ul>
+            <ul  class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item d-flex align-items-center">
+                    <i class="fa-brands mx-2 fa-instagram"></i>
+                    <i class="fa-brands mx-2 fa-facebook"></i>
+                    <i class="fa-brands mx-2 fa-linkedin"></i>
+                    <i class="fa-brands mx-2 fa-twitter"></i>
+                    <i class="fa-brands mx-2 fa-youtube"></i>
+
+                    <div class="dropdown " *ngIf="isLogin" >
+                        <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          List
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><button class="dropdown-item fw-bold font-sm" type="button" *ngIf="isLogin"  routerLink="/allorders">
+                            <i class="fa-solid fa-border-all main-color "></i>  Allorders</button>
+                        </li>
+                          <li><button class="dropdown-item fw-bold font-sm" type="button" *ngIf="isLogin" routerLink="/wishlist" ><i class="fa-regular fa-heart text-danger "></i> WishList</button></li>
+                         
+                        </ul>
+                      </div>
+
+
+                  
+                      
+            
+                    <a *ngIf="isLogin" routerLink="/cart" class="me-2">
+                        <button type="button" class="btn position-relative mt-1">
+                            <i class="fa-solid fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                              {{numCart}}
+                              
+                            </span>
+                          </button>
+                    </a>
+                   
+                </li>
+
+                <li *ngIf="!isLogin" class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="login" routerLinkActive="/login" > login</a>
+                </li>
+                <li *ngIf="!isLogin" class="nav-item">
+                    <a class="nav-link text-capitalize" routerLink="register" routerLinkActive="/register" > register</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class=" cursor-pointer nav-link text-capitalize"  (click)="logout()" > Logout</a>
+                </li>
+               
+              
+              
+                
+                
+                
+
+
+            </ul>
+        </div>
+  </div>
+</nav>
+
